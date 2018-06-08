@@ -1,4 +1,4 @@
-package hello;
+package hello.domain;
 
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
@@ -11,10 +11,10 @@ public class User {
     @GeneratedValue(strategy=GenerationType.AUTO)
     private Integer id;
 
+    private String name;
+
     public User() {
     }
-
-    private String name;
 
     private String email;
 

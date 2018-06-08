@@ -1,0 +1,94 @@
+<html>
+
+    <head>
+<style>
+h1 {
+    color: green;
+    text-align: center;
+}
+table, th, td {
+    border: 1px solid white;
+    border-collapse: collapse;
+    background-color: #dddddd;
+    text-align: left;
+    padding: 8px;
+}
+table {
+    border-spacing: 5px;
+}
+body {
+    background-color: lightblue;
+
+}
+input[type=text] {
+    width: 20%;
+    padding: 12px 20px;
+    margin: 8px 0;
+    box-sizing: border-box;
+    border: 2px solid red;
+    border-radius: 4px;
+}
+input[type=button], input[type=submit], input[type=reset] {
+    background-color: #4CAF50;
+    border: none;
+    color: white;
+    padding: 16px 32px;
+    text-decoration: none;
+    margin: 4px 2px;
+    cursor: pointer;
+}
+.button {
+    background-color: #4CAF50;
+    border: none;
+    color: white;
+    padding: 15px 32px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    margin: 4px 2px;
+    cursor: pointer;
+}
+</style>
+    </head>
+
+
+
+            <body>
+        <div>
+            <center><form method="post">
+
+            <input type="text" name="name" placeholder="firstname"/>
+            <input type="text" name="email" placeholder="lastname"/>
+            <button class="button" type="submit">Enter</button>
+
+            </form></center>
+        </div>
+        <div><h1>SPISOK</h1></div>
+
+
+<center><table style="width:50%">
+    <tr>
+                <th>id</th>
+                <th>name</th>
+                <th>email</th>
+              </tr>
+
+
+        {{#users}}
+
+          <tr>
+              <td><b>{{id}}</b></td>
+              <td><span>{{name}}</span></td>
+              <td><i>{{email}}</i></td>
+            </tr>
+
+
+        {{/users}}
+</table></center>
+
+            </body>
+
+
+
+</html>
