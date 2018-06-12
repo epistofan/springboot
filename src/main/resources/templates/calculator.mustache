@@ -1,0 +1,133 @@
+<!DOCTYPE HTML>
+
+
+<html>
+
+<head>
+    <style>
+        h1 {
+            color: #008CBA;
+            text-align: center;
+        }
+        p.serif {
+            font-family: "Times New Roman", Times, serif;
+            text-align: center;
+        }
+        table, th, td {
+            border: 1px solid white;
+            border-collapse: collapse;
+            background-color: #dddddd;
+            text-align: left;
+            padding: 8px;
+
+
+        }
+        table {
+            width: 50%;
+            border-spacing: 5px;
+            margin: auto;
+        }
+        body {
+            background-color: lightblue;
+
+        }
+        input[type=text] {
+            width: 20%;
+            padding: 12px 20px;
+            margin: 8px 0;
+            box-sizing: border-box;
+            border: 2px solid white;
+            border-radius: 4px;
+        }
+        input[type=button], input[type=submit], input[type=reset] {
+            background-color: #4CAF50;
+            border: none;
+            color: white;
+            padding: 16px 32px;
+            text-decoration: none;
+            margin: 4px 2px;
+            cursor: pointer;
+        }
+        .button {
+            background-color: #008CBA;
+            border: none;
+            color: white;
+            padding: 15px 32px;
+            text-align: center;
+            text-decoration: none;
+            display: inline-block;
+            font-size: 16px;
+            margin: 4px 2px;
+            cursor: pointer;
+        }
+        .item1 { grid-area: header;}
+        .item2 { grid-area: menu; }
+        .item3 { grid-area: main; }
+        .item4 { grid-area: right; }
+        .item5 { grid-area: footer; }
+
+        .grid-container {
+            display: grid;
+            grid-template-areas:
+                    'header header header header header header'
+                    'menu main main main main right'
+                    'footer footer footer footer footer footer';
+            grid-gap: 3px;
+            background-color: lightgrey;
+            padding: 10px;
+            grid-template-rows: 200px 600px;
+
+        }
+        .grid-container > div {
+            background-color: aliceblue;
+            text-align: center;
+            padding: 20px 0;
+            font-size: 30px;
+
+        }
+    </style>
+</head>
+
+<body>
+<script>
+    function button1() {
+        var existingText = document.getElementById("id1").value;
+        document.getElementById("id1").value = existingText + "1";
+    }
+    function button2() {
+        var existingText = document.getElementById("id1").value;
+        document.getElementById("id1").value=existingText + "2";
+    }
+</script>
+ <table>
+     <tr>
+         <td><button class="button" onclick="button1()">1</button></td>
+         <td><button class="button" onclick="button2()">2</button></td>
+         <td><button class="button" onclick="button2()">3</button></td>
+     </tr>
+     <tr>
+         <td><button class="button" onclick="button1()">4</button></td>
+         <td><button class="button" onclick="button2()">5</button></td>
+         <td><button class="button" onclick="button2()">6</button></td>
+     </tr>
+     <tr>
+         <td><button class="button" onclick="button1()">7</button></td>
+         <td><button class="button" onclick="button2()">8</button></td>
+         <td><button class="button" onclick="button2()">9</button></td>
+     </tr>
+
+     <tr>
+         <td><button class="button" onclick="button1()">0</button></td>
+         <td><button class="button" onclick="button1()">.</button></td>
+         <td><button class="button" onclick="button1()">+/-</button></td>
+     </tr>
+     <tr>
+
+         <td><button class="button" onclick="button1()">*</button></td>
+         <td><button class="button" onclick="button1()">/</button></td>
+         <td><button class="button" onclick="button1()">=</button></td>
+     </tr>
+     <tr><input type='text' id='id1'></tr>
+ </table>
+</body>
+</html>

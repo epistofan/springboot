@@ -1,3 +1,6 @@
+<!DOCTYPE HTML>
+
+
 <html>
 
     <head>
@@ -16,9 +19,13 @@ table, th, td {
     background-color: #dddddd;
     text-align: left;
     padding: 8px;
+
+
 }
 table {
+    width: 50%;
     border-spacing: 5px;
+    margin: auto;
 }
 body {
     background-color: lightblue;
@@ -53,43 +60,127 @@ input[type=button], input[type=submit], input[type=reset] {
     margin: 4px 2px;
     cursor: pointer;
 }
+.item1 { grid-area: header;}
+.item2 { grid-area: menu; }
+.item3 { grid-area: main; }
+.item4 { grid-area: right; }
+.item5 { grid-area: footer; }
+
+.grid-container {
+    display: grid;
+    grid-template-areas:
+            'header header header header header header'
+            'menu main main main main right'
+            'footer footer footer footer footer footer';
+    grid-gap: 3px;
+    background-color: lightgrey;
+    padding: 10px;
+    grid-template-rows: 200px auto;
+
+}
+.grid-container > div {
+    background-color: aliceblue;
+    text-align: center;
+    padding: 20px 0;
+    font-size: 30px;
+
+}
 </style>
     </head>
 
 
 
-            <body>
-        <div>
-            <center><form method="post">
+<body>
+    <div class="grid-container">
+     <div class = "item1">Technical and Managerial Tutorials
+
+     </div>
+
+
+
+    <div class="item2">MENU
+
+        <div> <a href="calculator">Calculator</a> </div>
+
+    </div>
+
+
+
+    <div class="item3">
+        <form method="post">
 
             <input type="text" name="name" placeholder="firstname"/>
             <input type="text" name="email" placeholder="lastname"/>
             <button class="button" type="submit">Enter</button>
 
-            </form></center>
-        </div>
-        <div><p class="serif">SPISOK</p></div>
+        </form>
 
-
-<center><table style="width:50%">
-    <tr>
+        <table>
+            <tr>
                 <th>id</th>
                 <th>name</th>
                 <th>email</th>
-              </tr>
-
-
-        {{#users}}
-
-          <tr>
-              <td><b>{{id}}</b></td>
-              <td><span>{{name}}</span></td>
-              <td><i>{{email}}</i></td>
             </tr>
 
 
-        {{/users}}
-</table></center>
+            {{#users}}
+
+                <tr>
+                    <td><b>{{id}}</b></td>
+                    <td><span>{{name}}</span></td>
+                    <td><i>{{email}}</i></td>
+                </tr>
+
+
+            {{/users}}
+        </table>
+        <script>
+        function button1() {
+            var existingText = document.getElementById("id1").value;
+            document.getElementById("id1").value = existingText + "1";
+        }
+        function button2() {
+            var existingText = document.getElementById("id1").value;
+            document.getElementById("id1").value=existingText + "2";
+        }
+    </script>
+       <!-- <table>
+            <tr>
+                <td><button class="button" onclick="button1()">1</button></td>
+                <td><button class="button" onclick="button2()">2</button></td>
+                <td><button class="button" onclick="button2()">3</button></td>
+            </tr>
+            <tr>
+                <td><button class="button" onclick="button1()">4</button></td>
+                <td><button class="button" onclick="button2()">5</button></td>
+                <td><button class="button" onclick="button2()">6</button></td>
+            </tr>
+            <tr>
+                <td><button class="button" onclick="button1()">7</button></td>
+                <td><button class="button" onclick="button2()">8</button></td>
+                <td><button class="button" onclick="button2()">9</button></td>
+            </tr>
+
+            <tr>
+                <td><button class="button" onclick="button1()">0</button></td>
+                <td><button class="button" onclick="button1()">.</button></td>
+                <td><button class="button" onclick="button1()">+/-</button></td>
+            </tr>
+            <tr>
+
+                <td><button class="button" onclick="button1()">*</button></td>
+                <td><button class="button" onclick="button1()">/</button></td>
+                <td><button class="button" onclick="button1()">=</button></td>
+            </tr>
+            <tr><input type='text' id='id1'></tr>
+        </table>-->
+    </div>
+        <div class="item4">RIGHT
+        </div>
+    <div class="item5">FOOTER
+    </div>
+
+    </div>
 
             </body>
 

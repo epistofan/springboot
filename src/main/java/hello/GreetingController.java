@@ -41,4 +41,9 @@ public class GreetingController {
         model.put("users", Users);
         return "main";
     }
+    @GetMapping("calculator")
+    public String calc(){
+
+        return "calculator";
+    }
 }
