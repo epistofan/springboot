@@ -22,7 +22,7 @@ public class GreetingController {
         return "greeting";
     }
     @GetMapping("main")
-    public String main(Map<String, Object>model){
+    public String main(Map<String, Object> model){
         Iterable<User>Users = userRepo.findAll();
         model.put("users", Users);
 
@@ -42,7 +42,9 @@ public class GreetingController {
         return "main";
     }
     @GetMapping("calculator")
-    public String calc(){
+    public String calc(Map<String, Object> model){
+        String result = "Answer";
+        model.put("ravno", result );
 
         return "calculator";
     }

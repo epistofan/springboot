@@ -32,12 +32,13 @@
 
         }
         input[type=text] {
-            width: 20%;
-            padding: 12px 20px;
-            margin: 8px 0;
+            width: 90%;
+            padding: 15px 5px;
+            margin: 5px 0;
             box-sizing: border-box;
             border: 2px solid white;
             border-radius: 4px;
+            font-size: 20px;
         }
         input[type=button], input[type=submit], input[type=reset] {
             background-color: #4CAF50;
@@ -47,48 +48,93 @@
             text-decoration: none;
             margin: 4px 2px;
             cursor: pointer;
+
+        }
+        .textarea {
+            resize: none;
+            margin-top: 10px;
+
         }
         .button {
-            background-color: #008CBA;
+            background-color: darkgrey;
             border: none;
+            border-radius: 4px;
             color: white;
             padding: 15px 32px;
             text-align: center;
             text-decoration: none;
             display: inline-block;
             font-size: 16px;
+            margin: 5px 2px;
+            cursor: pointer;
+            transition-duration: 0.4s;
+            width: 80px;
+            box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2), 0 6px 20px 0 rgba(0,0,0,0.19);
+
+        }
+        .buttonH {
+            background-color: #4CAF50; /* Green */
+            border: none;
+            color: white;
+            padding: 16px 32px;
+            text-align: center;
+            text-decoration: none;
+            display: inline-block;
+            font-size: 16px;
             margin: 4px 2px;
+            -webkit-transition-duration: 0.4s; /* Safari */
+            transition-duration: 0.4s;
             cursor: pointer;
         }
-        .item1 { grid-area: header;}
-        .item2 { grid-area: menu; }
-        .item3 { grid-area: main; }
-        .item4 { grid-area: right; }
-        .item5 { grid-area: footer; }
+        .button4 {
+            background-color: darkgrey;
+            color: black;
+            border: 2px solid #e7e7e7;
+        }
+
+        .button4:hover {background-color: #e7e7e7;}
 
         .grid-container {
             display: grid;
-            grid-template-areas:
-                    'header header header header header header'
-                    'menu main main main main right'
-                    'footer footer footer footer footer footer';
-            grid-gap: 3px;
-            background-color: lightgrey;
-            padding: 10px;
-            grid-template-rows: 200px 600px;
+            grid-template-columns: 100px 100px 100px 100px 100px 100px 100px;
+            grid-gap: 1px;
+            background-color: aliceblue;
+            padding: 20px 50px 10px 20px;
+            width: 700px;
+            margin-left: auto;
+            margin-right: auto;
+            margin-top: 50px;
+
 
         }
         .grid-container > div {
-            background-color: aliceblue;
+            background-color: lightgrey;
+            border: none;
             text-align: center;
-            padding: 20px 0;
-            font-size: 30px;
+            font-size: 20px;
 
         }
+
+        .item11 {
+            grid-area: 1 / 3 / span 1 / span 3;
+        }
+        .item3 {
+            grid-area: 2 / 3 / span 4 / span 3;
+        }
+        .item21 {
+            grid-area: 6 / 3 / span 1 / span 3;
+        }
     </style>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
 </head>
 
-<body>
+<body onload="result()">
+<h1>Calculator</h1>
+
+
+<h1>{{ravno}}</h1>
+
+
 <script>
     function button1() {
         var existingText = document.getElementById("id1").value;
@@ -96,38 +142,71 @@
     }
     function button2() {
         var existingText = document.getElementById("id1").value;
-        document.getElementById("id1").value=existingText + "2";
+        document.getElementById("id1").value = existingText + "2";
+    }
+    function result() {
+        var result = {{ravno}};
+        document.getElementById("id1").value=result;
     }
 </script>
- <table>
-     <tr>
-         <td><button class="button" onclick="button1()">1</button></td>
-         <td><button class="button" onclick="button2()">2</button></td>
-         <td><button class="button" onclick="button2()">3</button></td>
-     </tr>
-     <tr>
-         <td><button class="button" onclick="button1()">4</button></td>
-         <td><button class="button" onclick="button2()">5</button></td>
-         <td><button class="button" onclick="button2()">6</button></td>
-     </tr>
-     <tr>
-         <td><button class="button" onclick="button1()">7</button></td>
-         <td><button class="button" onclick="button2()">8</button></td>
-         <td><button class="button" onclick="button2()">9</button></td>
-     </tr>
+<form method="post">
+<div class="grid-container">
+    <div class="item1"><button class="button" type="button" onclick="button1()">1</button>
+    </div>
+    <div class="item2"><button class="button" type="button" onclick="button2()">2</button>
+    </div>
+    <div class="item3"><textarea class="textarea" rows="12" cols="30" placeholder="notes..."></textarea></button>
+    </div>
+    <div class="item4"><button class="button" type="button" onclick="button2()"><-</button>
+    </div>
+    <div class="item5"><button class="button" type="button" onclick="button2()">=</button>
+    </div>
+    <div class="item6"><button class="button" type="button" onclick="button2()">6</button>
+    </div>
+    <div class="item7"><button class="button" type="button" onclick="button2()">7</button>
+    </div>
+    <div class="item8"><button class="button" type="button" onclick="button2()">8</button>
+    </div>
+    <div class="item9"><button class="button" type="button" onclick="button2()">9</button>
+    </div>
+    <div class="item10"><button class="button" type="button" onclick="button2()">0</button>
+    </div>
+    <div class="item11"><input type='text' id='id1'>
+    </div>
+    <div class="item12"><button class="button" type="button" onclick="button2()">C</button>
+    </div>
 
-     <tr>
-         <td><button class="button" onclick="button1()">0</button></td>
-         <td><button class="button" onclick="button1()">.</button></td>
-         <td><button class="button" onclick="button1()">+/-</button></td>
-     </tr>
-     <tr>
+    <div class="item13"><button class="button" type="button" onclick="button2()">=</button>
+    </div>
 
-         <td><button class="button" onclick="button1()">*</button></td>
-         <td><button class="button" onclick="button1()">/</button></td>
-         <td><button class="button" onclick="button1()">=</button></td>
-     </tr>
-     <tr><input type='text' id='id1'></tr>
- </table>
+    <div class="item14"><button class="button" type="button" onclick="button2()">.</button>
+    </div>
+    <div class="item15"><button class="button" type="button" onclick="button2()">+-</button>
+    </div>
+    <div class="item16"><button class="button" type="button" onclick="button2()">+</button>
+    </div>
+    <div class="item17"><button class="button" type="button" onclick="button2()">-</button>
+    </div>
+    <div class="item17"><button class="button" type="button" onclick="button2()">*</button>
+    </div>
+    <div class="item17"><button class="button" type="button" onclick="button2()">/</button>
+    </div>
+    <div class="item18"><button class="button" type="button" onclick="button2()">18</button>
+    </div>
+    <div class="item19"><button class="button" type="button" onclick="button2()">19</button>
+    </div>
+    <div class="item20"><button class="button" type="button" onclick="button2()">20</button>
+    </div>
+
+    <div class="item21"><input type='text' name="expression" id='id1'>
+    </div>
+    <div class="item22">
+
+        <button class="button" type="submit">22</button>
+
+    </div>
+
+</div>
+</form>
 </body>
 </html>
