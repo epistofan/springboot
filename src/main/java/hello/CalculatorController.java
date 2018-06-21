@@ -14,6 +14,8 @@ public class CalculatorController {
 
 @Autowired
 ExpressionParser expressionParser;
+    @Autowired
+    EqnRepository eqnRepository;
 
 
     @PostMapping("/calculator")
@@ -22,6 +24,7 @@ ExpressionParser expressionParser;
         Equation equation = new Equation();
         equation.setEquation(expression);
         String results = expressionParser.parse(equation);
+        eqnRepository.save(equation);
         System.out.println("post "+ results);
 
         model.put("ravno", results);

@@ -134,15 +134,36 @@
 
 <h1>{{ravno}}</h1>
 
-
+<script src="script.js"></script>
 <script>
-    function button1() {
-        var existingText = document.getElementById("id1").value;
-        document.getElementById("id1").value = existingText + "1";
-    }
+
+
     function button2() {
         var existingText = document.getElementById("id1").value;
         document.getElementById("id1").value = existingText + "2";
+    }
+    function button3() {
+        var existingText = document.getElementById("id1").value;
+        document.getElementById("id1").value = existingText + "3";
+    } function button4() {
+        var existingText = document.getElementById("id1").value;
+        document.getElementById("id1").value = existingText + "4";
+    }
+    function button5() {
+        var existingText = document.getElementById("id1").value;
+        document.getElementById("id1").value = existingText + "5";
+    }
+    function button6() {
+        var existingText = document.getElementById("id1").value;
+        document.getElementById("id1").value = existingText + "6";
+    }
+    function button7() {
+        var existingText = document.getElementById("id1").value;
+        document.getElementById("id1").value = existingText + "7";
+    }
+    function buttonClear() {
+        var existingText = document.getElementById("id1").value;
+        document.getElementById("id1").value = existingText + "7";
     }
     function result() {
         var result = {{ravno}};
@@ -157,23 +178,23 @@
     </div>
     <div class="item3"><textarea class="textarea" rows="12" cols="30" placeholder="notes..."></textarea></button>
     </div>
-    <div class="item4"><button class="button" type="button" onclick="button2()"><-</button>
+    <div class="item4"><button class="button" type="button" onclick="button4()"><-</button>
     </div>
     <div class="item5"><button class="button" type="button" onclick="button2()">=</button>
     </div>
-    <div class="item6"><button class="button" type="button" onclick="button2()">6</button>
+    <div class="item6"><button class="button" type="button" onclick="button6()">6</button>
     </div>
-    <div class="item7"><button class="button" type="button" onclick="button2()">7</button>
+    <div class="item7"><button class="button" type="button" onclick="button7()">7</button>
     </div>
-    <div class="item8"><button class="button" type="button" onclick="button2()">8</button>
+    <div class="item8"><button class="button" type="button" onclick="button8()">8</button>
     </div>
-    <div class="item9"><button class="button" type="button" onclick="button2()">9</button>
+    <div class="item9"><button class="button" type="button" onclick="button9()">9</button>
     </div>
-    <div class="item10"><button class="button" type="button" onclick="button2()">0</button>
+    <div class="item10"><button class="button" type="button" onclick="button0()">0</button>
     </div>
     <div class="item11"><input type='text' id='id1'>
     </div>
-    <div class="item12"><button class="button" type="button" onclick="button2()">C</button>
+    <div class="item12"><button class="button" type="button" onclick="buttonClear()">C</button>
     </div>
 
     <div class="item13"><button class="button" type="button" onclick="button2()">=</button>
@@ -198,7 +219,7 @@
     <div class="item20"><button class="button" type="button" onclick="button2()">20</button>
     </div>
 
-    <div class="item21"><input type='text' name="expression" id='id1'>
+    <div class="item21"><input type='text' name="expression" id='id1' required="required">
     </div>
     <div class="item22">
 

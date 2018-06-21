@@ -12,7 +12,7 @@ public class Equation {
     @GeneratedValue(strategy=GenerationType.AUTO)
     private Integer id;
 
-    private String equation;
+    public String equation;
 
     public Equation() {
     }
